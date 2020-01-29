@@ -13,7 +13,7 @@
 
 [Proyecto ConexionBdD](https://github.com/ecruzq1/Conexionbdd/tree/master/src)
 
-[Metodo Listar](https://github.com/ecruzq1/Deberes/blob/master/Deber-diccionario/lista.vb)
+[Modificar Insertar Datos en BdD](https://github.com/Fundamento-programacion-ll/Proyectos/tree/master/Insertar%2CModificarBDD/src)
 
 <h1>AUTOR</h1>
 
