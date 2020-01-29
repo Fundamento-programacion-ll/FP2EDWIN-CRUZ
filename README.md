@@ -9,8 +9,8 @@
 
 [Clases](https://github.com/ecruzq1/Empleado/tree/master/src)
 
-<h4>Link Clases Cedula</h4>
-[Clases](https://github.com/ecruzq1/Verificador-Cedula/blob/master/src/cedula/Cedula.java)
+<h3>Link Clases Cedula</h3>
+[Clases_Cedula](https://github.com/ecruzq1/Verificador-Cedula/blob/master/src/cedula/Cedula.java)
 
 
 <h1>AUTOR</h1>
