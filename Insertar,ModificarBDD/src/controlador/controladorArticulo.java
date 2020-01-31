@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controlador;
 
 import conexion.conector;
@@ -58,7 +54,19 @@ public class controladorArticulo {
             JOptionPane.showMessageDialog(null, "ERROR");
         }
     }
+ public void eliminarArticulo(articulo nuevoArticulo) {
 
+        String sqlInsert = "DELETE FROM Articulos  WHERE id='" + nuevoArticulo.getId() + "'";
+        try {
+            ps = conexion.getConxion().prepareStatement(sqlInsert);
+            ps.execute();
+
+            JOptionPane.showMessageDialog(null, "Datos Eliminados correctamente");
+        } catch (SQLException ex) {
+            System.out.println("ERROR" + ex);
+            JOptionPane.showMessageDialog(null, "ERROR");
+        }
+    }
     /**
      * public void Cosultaarticulo (String consultaarticulo){
      *

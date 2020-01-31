@@ -19,7 +19,7 @@ public class conector {
     
     Connection conexion = null;
     String url = 
-   "jdbc:mysql://localhost:3306/productos";
+   "jdbc:mysql://localhost:3306/Ejercicio1";
     String usuario = "root";
     String password = "1234";
     

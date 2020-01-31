@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Vista;
 
 import conexion.conector;
@@ -30,8 +26,10 @@ public class Producto extends javax.swing.JFrame {
     controladorArticulo articulocontrolador = new controladorArticulo();
 
     public Producto() {
+
         initComponents();
         idArticulo();
+
         this.setLocationRelativeTo(null);
     }
 
@@ -41,7 +39,7 @@ public class Producto extends javax.swing.JFrame {
         try {
             st = cn.createStatement();
 
-            rs = st.executeQuery("SELECT * FROM Articulos");
+            rs = st.executeQuery("SELECT distinct * FROM Articulos");
 
             while (rs.next()) {
                 cbarticulos.addItem(rs.getString("id"));
@@ -71,6 +69,7 @@ public class Producto extends javax.swing.JFrame {
         cbarticulos = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,6 +124,13 @@ public class Producto extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Eliminar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -146,8 +152,9 @@ public class Producto extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btn_agregar)
-                            .addComponent(btn_limpiar)
-                            .addComponent(jButton1)))
+                            .addComponent(jButton1)
+                            .addComponent(jButton2)
+                            .addComponent(btn_limpiar)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel4)
                         .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -161,11 +168,12 @@ public class Producto extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(btn_agregar)
                         .addGap(16, 16, 16)
                         .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
+                        .addGap(18, 18, 18)
                         .addComponent(btn_limpiar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
@@ -191,15 +199,23 @@ public class Producto extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
+        int x = JOptionPane.showConfirmDialog(null, "Desea Ingresar Sus Productos ", "Ingresar",
+                JOptionPane.YES_OPTION);
+        if (x == JOptionPane.YES_OPTION) {
+            nuevoarticulo.setNombre(txtnombre.getText());
+            nuevoarticulo.setDescr(txtdescripcion.getText());
+            float precio = 0;
+            precio = Float.parseFloat(txtprecio.getText());
+            nuevoarticulo.setPrecio(precio);
 
-        nuevoarticulo.setNombre(txtnombre.getText());
-        nuevoarticulo.setDescr(txtdescripcion.getText());
-        float precio = 0;
-        precio = Float.parseFloat(txtprecio.getText());
-        nuevoarticulo.setPrecio(precio);
-
-        articulocontrolador.ingresarArticulo(nuevoarticulo);
-
+            articulocontrolador.ingresarArticulo(nuevoarticulo);
+            cbarticulos.removeAllItems();
+            txtnombre.setText("");
+            txtdescripcion.setText("");
+            txtprecio.setText("");
+            cbarticulos.addItem("Seleccionar:");
+            idArticulo();
+        }
     }//GEN-LAST:event_btn_agregarActionPerformed
 
     private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
@@ -218,8 +234,7 @@ public class Producto extends javax.swing.JFrame {
             ps.setString(1, tmp);
             rs = ps.executeQuery();
             if (rs.next()) {
-                //String add1 = rs.getString("Id");
-                //txtid.setText(add1);
+
                 String add2 = rs.getString("Nombre");
                 txtnombre.setText(add2);
                 String add3 = rs.getString("Descripcion");
@@ -237,13 +252,16 @@ public class Producto extends javax.swing.JFrame {
     }//GEN-LAST:event_cbarticulosPopupMenuWillBecomeInvisible
 
     private void cbarticulosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbarticulosItemStateChanged
-        String opcion = cbarticulos.getSelectedItem().toString();
-        if (opcion.equals("Seleccionar:")) {
-            //txtid.setText("");
-            txtnombre.setText("");
-            txtdescripcion.setText("");
-            txtprecio.setText("");
+        try {
+            String opcion = cbarticulos.getSelectedItem().toString();
+            if (opcion.equals("Seleccionar:")) {
+                txtnombre.setText("");
+                txtdescripcion.setText("");
+                txtprecio.setText("");
 
+            }
+
+        } catch (Exception e) {
         }
 
     }//GEN-LAST:event_cbarticulosItemStateChanged
@@ -262,14 +280,38 @@ public class Producto extends javax.swing.JFrame {
             nuevoarticulo.setPrecio(precio);
 
             articulocontrolador.modificarArticulo(nuevoarticulo);
-            txtdescripcion.setText("");
+
+            cbarticulos.removeAllItems();
             txtnombre.setText("");
+            txtdescripcion.setText("");
             txtprecio.setText("");
+            cbarticulos.addItem("Seleccionar:");
+            idArticulo();
 
         }
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        int x = JOptionPane.showConfirmDialog(null, "Desea Eliminar Sus Productos ", "Eliminar",
+                JOptionPane.YES_OPTION);
+        if (x == JOptionPane.YES_OPTION) {
+
+            nuevoarticulo.setId(Integer.parseInt(cbarticulos.getSelectedItem().toString()));
+
+            articulocontrolador.eliminarArticulo(nuevoarticulo);
+
+            cbarticulos.removeAllItems();
+            txtnombre.setText("");
+            txtdescripcion.setText("");
+            txtprecio.setText("");
+            cbarticulos.addItem("Seleccionar:");
+            idArticulo();
+        }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -311,6 +353,7 @@ public class Producto extends javax.swing.JFrame {
     private javax.swing.JButton btn_limpiar;
     private javax.swing.JComboBox<String> cbarticulos;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
