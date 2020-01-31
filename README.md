@@ -17,6 +17,9 @@
 
 [Herencia](https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/Herencia/src/herencia)
 
+[Figuras Geometricas Con Herencia](https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/figurasGeometricas/src/figurasgeometricas)
+
+
 
 <h1>AUTOR</h1>
 
