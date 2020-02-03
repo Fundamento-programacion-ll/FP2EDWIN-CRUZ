@@ -13,7 +13,13 @@
 
 [Proyecto ConexionBdD](https://github.com/ecruzq1/Conexionbdd/tree/master/src)
 
-[Modificar Insertar Datos en BdD](https://github.com/Fundamento-programacion-ll/Proyectos/tree/master/Insertar%2CModificarBDD/src)
+[Modificar Insertar Eliminar Datos en BdD](https://github.com/Fundamento-programacion-ll/Proyectos/tree/master/Insertar%2CModificarBDD/src)
+
+[Herencia](https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/Herencia/src/herencia)
+
+[Figuras Geometricas Con Herencia](https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/figurasGeometricas/src/figurasgeometricas)
+
+
 
 <h1>AUTOR</h1>
 
