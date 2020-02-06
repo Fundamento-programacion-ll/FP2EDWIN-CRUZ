@@ -5,37 +5,48 @@
  */
 package interfaz_grafica;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author SISTEMAS
  */
 public class Cilindro extends Circulo{
-    int h;
+    
+    int altura;
 
-    public Cilindro() {
-    }
-
-    public Cilindro(int h, int radio, int x, int y) {
+    public Cilindro(int altura, int radio, int x, int y) {
         super(radio, x, y);
-        this.h = h;
+        this.altura = altura;
     }
 
-    public Cilindro(int h, int radio) {
-        super(radio);
-        this.h = h;
+    
+    
+    public int getAltura() {
+        return altura;
     }
 
-    public Cilindro(int h) {
-        this.h = h;
-    }
-
-    public int getH() {
-        return h;
-    }
-
-    public void setH(int h) {
-        this.h = h;
+    public void setAltura(int altura) {
+        this.altura = altura;
     }
     
+    public void Cilindro(){
+    
+        int dato = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la altura del Cilindro", "Cilindro", 1));
+
+        this.altura = dato;
+    
+    }    
+    public void paint(Graphics g){
+    
+        g.setColor(Color.DARK_GRAY);
+        g.drawLine(100, 100, 100, this.altura);
+        g.drawLine(200, 100, 200, this.altura);
+        g.drawOval(100, 75, 100, 50);
+        g.drawOval(100, this.altura-25, 100, 50);
+    
+    }
     
 }

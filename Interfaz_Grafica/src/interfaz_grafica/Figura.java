@@ -9,6 +9,9 @@ import javax.swing.JPanel;
  * @author SISTEMAS
  */
 public abstract class Figura extends JPanel {
-   public abstract void dibujo(Graphics g);
+    @Override
+    public abstract void paint(Graphics g);
+       public abstract double getArea();
+
    
 }

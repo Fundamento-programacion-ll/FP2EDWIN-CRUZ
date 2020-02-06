@@ -11,47 +11,54 @@ import javax.swing.JOptionPane;
  */
 public class Punto extends Figura {
 
-    private int x, y;
-
-    @Override
-    public void dibujo(Graphics g) {
-        //g.setColor(Color.yellow);
-        g.fillOval(this.x, this.y, 30, 30);
-
-    }
+    int x;
+    int y;
 
     public Punto(int x, int y) {
-        super();
         this.x = x;
         this.y = y;
-    }
-
-    public Punto() {
-        super();
-        String datos = JOptionPane.showInputDialog(null, "Ingrese valores separados por coma");
-        StringTokenizer tokkens = new StringTokenizer(datos, ",");
-        this.x = Integer.parseInt(tokkens.nextToken());
-        this.y = Integer.parseInt(tokkens.nextToken());
-
     }
 
     public int getX() {
         return x;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
     public int getY() {
         return y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
     }
 
     public void setY(int y) {
         this.y = y;
     }
 
+    @Override
     public String toString() {
-        return " Puntos: [x= " + this.x + ", y" + this.y + "]";
+        return "Punto: [x = " + this.x + " y = " + this.y + "]";
     }
+
+    public void Punto() {
+
+        String datos = JOptionPane.showInputDialog(null, "Ingrese los elementos separados por (,)");
+        StringTokenizer tokkens = new StringTokenizer(datos, ",");
+
+        this.x = Integer.parseInt(tokkens.nextToken());
+        this.y = Integer.parseInt(tokkens.nextToken());
+
+    }
+
+    @Override
+    public void paint(Graphics g) {
+       g.setColor(Color.RED);
+        g.fillOval(this.x, this.y, 30, 30);
+    }
+
+    @Override
+    public double getArea() {
+        return 0;
+    }
+
 }
