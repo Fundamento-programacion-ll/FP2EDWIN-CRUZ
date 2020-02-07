@@ -27,6 +27,8 @@
 
 [Dibujar Figuras Geometricas Con Interfaz Grafica](https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/Interfaz_Grafica/src/interfaz_grafica)
 
+[Comparador Entre Provincias](https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/Comparadores/src/comparadores)
+
 
 <h1>AUTOR</h1>
 
