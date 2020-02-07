@@ -15,9 +15,20 @@ public class Comparadores {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        String salida="";
         pais p = new pais();
         p.setListaProvincias();
-        System.out.println(p);
+        salida+="Listar Provincias \n"+p.toString();
+        System.out.println(salida);
+        
+        p.ordenarPorNombreProvincias();
+        salida+="Listar Provincias \n"+p.toString();
+        System.out.println(salida);
+        
+        p.ordenarPorNumeroHabitantes();
+        salida+="Listar Provincias \n"+p.toString();
+        System.out.println(salida);
+
     }
 
 }

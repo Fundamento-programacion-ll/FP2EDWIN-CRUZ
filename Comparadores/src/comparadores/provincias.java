@@ -49,6 +49,8 @@ public class provincias {
         this.numeroHabitantes = numeroHabitantes;
     }
     
-    
+     public String toString() {
+        return "Nombre Provincias "+ getNombreProvincia() + "Numero Habitantes : " +getNumeroHabitantes();
+    }
     
 }
