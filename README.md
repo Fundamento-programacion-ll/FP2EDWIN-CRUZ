@@ -32,7 +32,7 @@
 [Comparador Entre Sueldos Empleados](https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/Empleado1/src/empleado1)
 
 
-[Funciones javaScript](https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/Funciones%20javaScript
+[Funciones javaScript](https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/Funciones%20javaScript)
 
 
 [String javaScript](https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/String%20javaScript)
