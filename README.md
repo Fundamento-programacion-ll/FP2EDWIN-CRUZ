@@ -29,7 +29,10 @@
 
 [Comparador Entre Provincias](https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/Comparadores/src/comparadores)
 
+[Comparador Entre Sueldos Empleados](https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/Comparadores/src/comparadores)
+
 
 <h1>AUTOR</h1>
 
 * Edwin Cruz
+https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/Empleado1/src/empleado1
