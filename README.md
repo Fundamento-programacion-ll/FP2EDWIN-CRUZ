@@ -39,6 +39,5 @@
 
 [Arreglos y Eventos javaScript](https://github.com/Fundamento-programacion-ll/FP2EDWIN-CRUZ/tree/master/Arreglos%20y%20Eventos%20javaScript)
 
-
 <h1>AUTOR</h1>
-* Edwin Cruz
+- Edwin Cruz
